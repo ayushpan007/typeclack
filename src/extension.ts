@@ -690,8 +690,19 @@ class TypeClackManager implements vscode.Disposable {
     }
 
     // ── Play a sound from the cache ──
-    function playSound(pack, soundName) {
+    async function playSound(pack, soundName) {
       const ac = ensureContext();
+      if (ac.state !== 'running') {
+        try {
+          await ac.resume();
+          log('AudioContext resumed');
+        } catch (e) {
+          log('Resume failed: ' + e);
+          return;
+        }
+        console.log('STATE:', ac.state);
+      }
+
       const packCache = bufferCache[pack];
       if (!packCache) { log('WARN: pack ' + pack + ' not loaded yet'); return; }
 
