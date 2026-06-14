@@ -3,7 +3,7 @@
   "displayName": "TypeClack",
   "description": "Realistic mechanical keyboard sounds while you type. Includes Cherry MX Blue, Brown, and Red switch sound packs.",
   "version": "1.0.0",
-  "publisher": "YOUR_PUBLISHER_NAME",
+  "publisher": "Ayush Pandey",
   "author": {
     "name": "Ayush Pandey"
   },
@@ -15,11 +15,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_GITHUB_USERNAME/typeclack"
+    "url": "https://github.com/ayushpan007/typeclack"
   },
-  "homepage": "https://github.com/YOUR_GITHUB_USERNAME/typeclack#readme",
+  "homepage": "https://github.com/ayushpan007/typeclack#readme",
   "bugs": {
-    "url": "https://github.com/YOUR_GITHUB_USERNAME/typeclack/issues"
+    "url": "https://github.com/ayushpan007/typeclack/issues"
   },
   "engines": {
     "vscode": "^1.80.0"
