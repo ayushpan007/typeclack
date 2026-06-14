@@ -1,0 +1,21 @@
+# Source files — compiled JS is in out/
+src/**
+**/*.ts
+**/*.ts.map
+media/**/*.wav
+
+# Build tooling
+node_modules/**
+.vscode/**
+tsconfig.json
+.eslintrc.json
+generate-sounds.js
+
+# Misc
+.gitignore
+.gitattributes
+**/.DS_Store
+**/Thumbs.db
+**/desktop.ini
+
+# Keep: out/, media/, package.json, README.md, CHANGELOG.md, LICENSE, icon

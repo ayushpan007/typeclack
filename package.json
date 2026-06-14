@@ -1,0 +1,153 @@
+{
+  "name": "typeclack",
+  "displayName": "TypeClack",
+  "description": "Realistic mechanical keyboard sounds while you type. Includes Cherry MX Blue, Brown, and Red switch sound packs.",
+  "version": "1.0.0",
+  "publisher": "YOUR_PUBLISHER_NAME",
+  "author": {
+    "name": "Ayush Pandey"
+  },
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#0f3460",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_GITHUB_USERNAME/typeclack"
+  },
+  "homepage": "https://github.com/YOUR_GITHUB_USERNAME/typeclack#readme",
+  "bugs": {
+    "url": "https://github.com/YOUR_GITHUB_USERNAME/typeclack/issues"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "keyboard",
+    "typing",
+    "mechanical keyboard",
+    "keyboard sounds",
+    "sound effects",
+    "cherry mx",
+    "blue switch",
+    "brown switch",
+    "red switch",
+    "audio",
+    "typing sounds",
+    "productivity"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:typeClack.toggle",
+    "onCommand:typeClack.selectPack",
+    "onCommand:typeClack.previewBlue",
+    "onCommand:typeClack.previewBrown",
+    "onCommand:typeClack.previewRed"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "typeClack.toggle",
+        "title": "TypeClack: Toggle Sounds",
+        "category": "TypeClack"
+      },
+      {
+        "command": "typeClack.previewBlue",
+        "title": "Preview Blue Switch",
+        "category": "TypeClack"
+      },
+      {
+        "command": "typeClack.previewBrown",
+        "title": "Preview Brown Switch",
+        "category": "TypeClack"
+      },
+      {
+        "command": "typeClack.previewRed",
+        "title": "Preview Red Switch",
+        "category": "TypeClack"
+      },
+      {
+        "command": "typeClack.selectPack",
+        "title": "Select Sound Pack",
+        "category": "TypeClack"
+      }
+    ],
+    "configuration": {
+      "title": "TypeClack",
+      "properties": {
+        "typeClack.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable keyboard sounds."
+        },
+        "typeClack.volume": {
+          "type": "number",
+          "default": 0.7,
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Sound volume from 0.0 to 1.0."
+        },
+        "typeClack.soundPack": {
+          "type": "string",
+          "default": "blue",
+          "enum": [
+            "blue",
+            "brown",
+            "red"
+          ],
+          "enumDescriptions": [
+            "Cherry MX Blue — clicky and tactile",
+            "Cherry MX Brown — tactile and balanced",
+            "Cherry MX Red — smooth and linear"
+          ],
+          "description": "Choose the mechanical switch sound profile."
+        },
+        "typeClack.muteTerminal": {
+          "type": "boolean",
+          "default": true,
+          "description": "Mute sounds while the integrated terminal is focused."
+        },
+        "typeClack.startupSound": {
+          "type": "boolean",
+          "default": true,
+          "description": "Play a startup sound when VS Code starts."
+        },
+        "typeClack.enabledLanguages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Only enable sounds for specified language IDs. Leave empty for all languages."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "@types/vscode": "^1.80.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vscode/vsce": "2.22.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.0"
+  },
+  "overrides": {
+    "cheerio": "1.0.0-rc.12"
+  }
+}
